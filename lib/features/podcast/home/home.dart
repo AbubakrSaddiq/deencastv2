@@ -1,4 +1,3 @@
-import 'package:deencastv2/features/player/audio_player_mini.dart';
 import 'package:deencastv2/features/podcast/home/widgets/episode_card.dart';
 import 'package:deencastv2/features/podcast/home/widgets/horizontal_scroll_section.dart';
 import 'package:deencastv2/features/podcast/home/widgets/primary_header_container.dart';
@@ -93,9 +92,6 @@ class HomeScreen extends StatelessWidget {
                 ],
               ),
             ),
-
-            ///mini audio player
-            AudioPlayerMini(isActive: true,)
           ],
         ),
       ),

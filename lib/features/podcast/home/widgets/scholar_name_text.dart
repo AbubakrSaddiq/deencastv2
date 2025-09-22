@@ -10,12 +10,14 @@ class ScholarNameText extends StatelessWidget {
     this.smallSize = false,
     this.maxLine = 2,
     this.textAlign = TextAlign.left,
+    this.textStyle,
   });
 
   final String title;
   final bool smallSize;
   final int maxLine;
   final TextAlign? textAlign;
+  final TextStyle? textStyle;
 
   @override
   Widget build(BuildContext context) {
@@ -23,9 +25,7 @@ class ScholarNameText extends StatelessWidget {
 
     return Text(
       title,
-      style: Theme.of(context).textTheme.bodyMedium?.apply(
-        color: darkMode ? DColors.light : DColors.dark,
-      ),
+      style: textStyle,
       overflow: TextOverflow.ellipsis,
       maxLines: maxLine,
       textAlign: textAlign,

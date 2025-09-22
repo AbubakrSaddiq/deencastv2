@@ -1,11 +1,11 @@
-import 'package:deencastv2/features/podcast/home/widgets/rounded_image.dart';
-import 'package:deencastv2/features/podcast/home/widgets/scholar_name_text.dart';
+import 'package:deencastv2/features/podcast/home/widgets/scholar_profile.dart';
+import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
-
+import 'package:get/get.dart';
 import '../../../../utils/constants/color.dart';
-import '../../../../utils/constants/image_strings.dart';
 import '../../../../utils/constants/sizes.dart';
 import '../../../../utils/device/device_utility.dart';
+import 'ItemListTile.dart';
 import 'date_posted_text.dart';
 import 'episode_category_text.dart';
 import 'episode_duration_text.dart';
@@ -16,18 +16,18 @@ class EpisodeCard extends StatelessWidget {
     super.key,
     required this.date,
     required this.title,
-    required this.category,
+    this.category,
     required this.duration,
-    required this.scholarName,
-    required this.scholarImage,
+    this.scholarName,
+    this.scholarImage,
   });
 
   final String date;
   final String title;
-  final String category;
+  final String? category;
   final String duration;
-  final String scholarName;
-  final String scholarImage;
+  final String? scholarName;
+  final String? scholarImage;
 
   @override
   Widget build(BuildContext context) {
@@ -58,13 +58,16 @@ class EpisodeCard extends StatelessWidget {
                     SizedBox(height: DSizes.sm),
 
                     ///category
-                    EpisodeCategoryText(category: category),
+                    if (category != null)
+                      EpisodeCategoryText(category: category!),
                   ],
                 ),
 
                 ///Play button
                 Column(
                   children: [
+                    ///more
+                    IconButton(onPressed: (){}, icon: Icon(Icons.more_horiz_outlined)),
                     IconButton(
                       onPressed: () {},
                       icon: const Icon(
@@ -80,22 +83,21 @@ class EpisodeCard extends StatelessWidget {
                 ),
               ],
             ),
-            // Divider
-            Divider(thickness: 1, color: Colors.grey, height: 20),
 
+            SizedBox(height: DSizes.lg,),
             ///scholar detail
-            Row(
-              children: [
-                RoundedImage(
-                  height: 50,
-                  border: Border.all(color: DColors.emeraldGreen),
-                  imageUrl: scholarImage,
+            if (scholarName != null && scholarImage != null)
+              Container(
+                decoration: BoxDecoration(
+                  borderRadius: BorderRadius.circular(DSizes.borderRadiusLg),
+                  color: DColors.emeraldGreen
                 ),
-                const SizedBox(width: 12),
-                //scholar name
-                ScholarNameText(title: scholarName),
-              ],
-            ),
+                child: ItemListTile(
+                  scholarImage: scholarImage!,
+                  scholarName: scholarName!,
+                  onTap: () => Get.to(() => const ScholarProfileScreen()),
+                ),
+              ),
           ],
         ),
       ),

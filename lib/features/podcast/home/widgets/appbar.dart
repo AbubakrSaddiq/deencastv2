@@ -29,13 +29,14 @@ class DAppBar extends StatelessWidget implements PreferredSizeWidget {
 
   @override
   Widget build(BuildContext context) {
+    final darkMode = DHelperFunction.isDarkMode(context);
 
     return Padding(
       padding: usePadding ? EdgeInsets.symmetric(horizontal: padding) : EdgeInsets.symmetric(horizontal: 0),
       child: AppBar(
         automaticallyImplyLeading: false,
         leading: showBackArrow
-            ? IconButton(onPressed: () => Get.back(), icon: const Icon(Iconsax.arrow_left))
+            ? IconButton(onPressed: () => Get.back(), icon: const Icon(Iconsax.arrow_left), color: darkMode ? DColors.light : DColors.dark,)
             : leadingIcon != null ? IconButton(onPressed: leadingOnPressed, icon: Icon(leadingIcon), color: DColors.light,) : null,
         title: title,
         actions: actions,

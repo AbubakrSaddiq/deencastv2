@@ -5,6 +5,7 @@ import 'package:deencastv2/features/podcast/home/widgets/appbar.dart';
 import 'package:deencastv2/utils/constants/color.dart';
 import 'package:deencastv2/utils/constants/image_strings.dart';
 import 'package:flutter/material.dart';
+import 'package:iconsax/iconsax.dart';
 import '../../../utils/constants/sizes.dart';
 import '../../../utils/helpers/helper_functions.dart';
 import '../home/widgets/search_bar_container.dart';
@@ -40,7 +41,7 @@ class ExploreScreen extends StatelessWidget {
             SizedBox(height: DSizes.spaceBtwItems),
 
             ///Filter
-            FilterHeading(usePadding: false),
+            FilterHeading(usePadding: false, text: 'Filter', icon: Iconsax.filter,),
 
             ///List of Categories
             CategoryGridView(),
