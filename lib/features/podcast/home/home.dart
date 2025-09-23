@@ -24,7 +24,6 @@ class HomeScreen extends StatelessWidget {
                 children: [
                   ///user avatar and user name
                   const UserAppbar(),
-
                   SizedBox(height: DSizes.defaultSpace),
                 ],
               ),

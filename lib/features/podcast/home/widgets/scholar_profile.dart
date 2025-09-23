@@ -62,6 +62,23 @@ class ScholarProfileScreen extends StatelessWidget {
                 title: 'Ramadan Tafseer 2024 12',
                 duration: '1h 10min',
               ),
+              EpisodeCard(
+                date: '2min',
+                title: 'Ramadan Tafseer 2024 12',
+                duration: '1h 10min',
+              ),EpisodeCard(
+                date: '2min',
+                title: 'Ramadan Tafseer 2024 12',
+                duration: '1h 10min',
+              ),EpisodeCard(
+                date: '2min',
+                title: 'Ramadan Tafseer 2024 12',
+                duration: '1h 10min',
+              ),EpisodeCard(
+                date: '2min',
+                title: 'Ramadan Tafseer 2024 12',
+                duration: '1h 10min',
+              ),
             ],
           ),
         ),

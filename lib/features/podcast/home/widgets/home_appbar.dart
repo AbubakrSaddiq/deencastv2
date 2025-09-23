@@ -1,4 +1,3 @@
-import 'package:deencastv2/utils/constants/image_strings.dart';
 import 'package:flutter/material.dart';
 import 'package:iconsax/iconsax.dart';
 import '../../../../utils/constants/color.dart';
@@ -18,8 +17,8 @@ class HomeAppBar extends StatelessWidget {
       title: Column(
         crossAxisAlignment: CrossAxisAlignment.start,
         children: [
-          Text(DTexts.homeAppBarTitle, style: Theme.of(context).textTheme.labelMedium!.apply(color: DColors.white),),
-          Text(DTexts.homeAppBarSubtitle, style: Theme.of(context).textTheme.headlineSmall!.apply(color: DColors.white),),
+          Text(DTexts.greetings, style: Theme.of(context).textTheme.labelMedium!.apply(color: DColors.white),),
+          Text(DTexts.fullName, style: Theme.of(context).textTheme.headlineSmall!.apply(color: DColors.white),),
         ],
       ),
 

@@ -6,11 +6,10 @@ import '../../../../../utils/constants/image_strings.dart';
 import '../../../../../utils/constants/sizes.dart';
 
 class UserProfileCard extends StatelessWidget {
-  const UserProfileCard({
-    super.key, required this.onPressed,
-  });
+  const UserProfileCard({super.key, required this.onPressed});
 
   final VoidCallback onPressed;
+
   @override
   Widget build(BuildContext context) {
     return Container(

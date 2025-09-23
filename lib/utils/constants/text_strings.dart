@@ -51,7 +51,7 @@ class DTexts{
   static String resetPasswordEmailSent = "Password Rest Email Sent";
 
   //  home appbar
-  static String homeAppBarTitle = "Assalamu Alaikum";
-  static String homeAppBarSubtitle = "Abubakar Saddiq";
+  static String greetings = "Assalamu Alaikum !";
+  static String fullName = "Abubakar Saddiq";
 
 }

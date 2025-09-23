@@ -39,7 +39,6 @@ class ExploreScreen extends StatelessWidget {
               padding: EdgeInsets.symmetric(horizontal: 0),
             ),
             SizedBox(height: DSizes.spaceBtwItems),
-
             ///Filter
             FilterHeading(usePadding: false, text: 'Filter', icon: Iconsax.filter,),
 

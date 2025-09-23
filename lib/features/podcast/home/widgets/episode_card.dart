@@ -42,17 +42,22 @@ class EpisodeCard extends StatelessWidget {
         padding: EdgeInsets.all(DSizes.sm),
         child: Column(
           children: [
-            //Top half
+            //time posted and properties
+            Row(
+              mainAxisAlignment: MainAxisAlignment.spaceBetween,
+              children: [
+                ///date posted
+                DatePostedText(date: date),
+                ///more
+                IconButton(onPressed: (){}, icon: Icon(Icons.more_horiz_outlined)),
+              ],
+            ),
             Row(
               mainAxisAlignment: MainAxisAlignment.spaceBetween,
               children: [
                 Column(
                   crossAxisAlignment: CrossAxisAlignment.start,
                   children: [
-                    ///date posted
-                    DatePostedText(date: date),
-                    SizedBox(height: DSizes.sm),
-
                     ///Episode name
                     EpisodeNameText(title: title),
                     SizedBox(height: DSizes.sm),
@@ -66,9 +71,7 @@ class EpisodeCard extends StatelessWidget {
                 ///Play button
                 Column(
                   children: [
-                    ///more
-                    IconButton(onPressed: (){}, icon: Icon(Icons.more_horiz_outlined)),
-                    IconButton(
+                     IconButton(
                       onPressed: () {},
                       icon: const Icon(
                         Icons.play_circle_fill,
@@ -84,9 +87,9 @@ class EpisodeCard extends StatelessWidget {
               ],
             ),
 
-            SizedBox(height: DSizes.lg,),
             ///scholar detail
             if (scholarName != null && scholarImage != null)
+
               Container(
                 decoration: BoxDecoration(
                   borderRadius: BorderRadius.circular(DSizes.borderRadiusLg),
